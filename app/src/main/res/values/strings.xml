@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TFlower</string>
+    <string name="photo">Find Out What Type Of Flower It is?</string>
+    <string name="submit">share via whatsapp?</string>
+</resources>
