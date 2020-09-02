@@ -38,7 +38,7 @@ public class ImageClassifier {
     private static final float IMAGE_STD = 1.0f;
     private static final float IMAGE_MEAN = 0.0f;
 
-    private static final int MAX_SIZE = 1;
+    private static final int MAX_SIZE = 3;
 
     /**
      * Image size along the x axis.
@@ -71,6 +71,7 @@ public class ImageClassifier {
      */
     private final TensorProcessor probabilityProcessor;
 
+
     /**
      * Creates a classifier
      *
@@ -82,7 +83,7 @@ public class ImageClassifier {
          * The loaded TensorFlow Lite model.
          */
         MappedByteBuffer classifierModel = FileUtil.loadMappedFile(activity,
-                "model.tflite");
+                "model2.tflite");
         // Loads labels out from the label file.
         labels = FileUtil.loadLabels(activity, "labels.txt");
 
@@ -112,8 +113,7 @@ public class ImageClassifier {
         probabilityProcessor = new TensorProcessor.Builder().add(new NormalizeOp(PROBABILITY_MEAN, PROBABILITY_STD))
                 .build();
     }
-
-    /**
+     /**
      * loads the image into tensor input buffer and apply pre processing steps
      *
      * @param bitmap            the bit map to be loaded
